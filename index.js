@@ -1,9 +1,9 @@
-const express = require('express')
-const puppeteer = require('puppeteer');
-const { PuppeteerScreenRecorder } = require("puppeteer-screen-recorder");
-const fs = require('fs');
+import express from 'express';
+import puppeteer from 'puppeteer';
+import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
+// const { PuppeteerScreenRecorder } = require("puppeteer-screen-recorder");
+import env from  'dotenv'
 const app = express()
-const env = require('dotenv');
 app.get('/', (req, res) => {
     res.send({message:"on the home page"})
 })
