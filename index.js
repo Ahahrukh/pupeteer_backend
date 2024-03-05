@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const { PuppeteerScreenRecorder } = require("puppeteer-screen-recorder");
 const fs = require('fs');
 const app = express()
+const env = require('dotenv');
 app.get('/', (req, res) => {
     res.send({message:"on the home page"})
 })
@@ -47,7 +48,7 @@ app.get('/test' , (req, res) => {
     const wait = (ms) => new Promise((res) => setTimeout(res, ms));
     res.send({status:"done"})
 })
-
-app.listen(3200, ()=>{
+let port = process.env.PORT
+app.listen(port, ()=>{
     console.log('listening on port 3200')
 })
